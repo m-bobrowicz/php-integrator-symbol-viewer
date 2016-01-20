@@ -1,0 +1,31 @@
+{
+  "name": "php-integrator-symbol-viewer",
+  "main": "./lib/Main",
+  "version": "0.1.0",
+  "description": "Atom package providing side panel with class information: constants, properties and methods with go-to functionality provided by php-integrator-base package.",
+  "repository": "https://github.com/tocjent/php-integrator-symbol-viewer.git",
+  "license": "GPL-3.0",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "consumedServices": {
+    "php-integrator.service": {
+      "versions": {
+        "^1.0.0": "setService"
+      }
+    }
+  },
+  "dependencies": {
+    "sub-atom": "~1.0.0",
+    "lodash": "~4.0.0"
+  },
+  "keywords": [
+    "php",
+    "class-info",
+    "symbol-viewer",
+    "class-symbol-viewer",
+    "integrator",
+    "integration",
+    "php-integrator"
+  ]
+}

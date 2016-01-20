@@ -1,0 +1,81 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.php-integrator-symbol-viewer {
+    padding: 8px;
+    overflow-y: scroll;
+}
+
+.php-integrator-sub-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.php-integrator-sub-list li {
+    cursor: pointer;
+    transition:.5s;
+}
+
+.php-integrator-sub-list li:hover {
+  background: @background-color-highlight;
+}
+
+@bullet-size: 1.2em;
+@bullet-font-size: 1em;
+
+.bullet-container {
+  margin-right: 0.3em;
+  font-family: monospace;
+  border-radius: 50%;
+  width: @bullet-size;
+  height: @bullet-size;
+  font-size: @bullet-font-size;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bullet-content {
+    margin-left: 1px;
+    margin-top: 4px;
+}
+
+.php-integrator-properties-sub-list .bullet-container {
+  background: @ui-site-color-1;
+}
+
+.php-integrator-methods-sub-list .bullet-container {
+  background: @ui-site-color-2;
+}
+
+.php-integrator-static-methods-sub-list .bullet-container {
+  background: @ui-site-color-3;
+}
+
+.php-integrator-constants-sub-list .bullet-container {
+  background: @ui-site-color-4;
+}
+
+.php-public {
+  font-weight: bold;
+}
+
+.php-magic:before {
+  content: "*";
+  margin-right: 0.3em;
+}
+
+.php-getter:before {
+  content: "<";
+  margin-right: 0.3em;
+}
+
+.php-setter:before {
+  content: ">";
+  margin-right: 0.3em;
+}
