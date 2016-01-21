@@ -7,6 +7,7 @@
 .php-integrator-symbol-viewer {
     padding: 8px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .php-integrator-sub-list {
@@ -16,11 +17,14 @@
 
 .php-integrator-sub-list li {
     cursor: pointer;
-    transition:.5s;
 }
 
-.php-integrator-sub-list li:hover {
-  background: @background-color-highlight;
+.php-integrator-sub-list li .bullet-container {
+    transition: 0.7s;
+}
+
+.php-integrator-sub-list li:hover .bullet-container {
+    background: #fff;
 }
 
 @bullet-size: 1.2em;
@@ -42,7 +46,7 @@
 
 .bullet-content {
     margin-left: 1px;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .php-integrator-properties-sub-list .bullet-container {
