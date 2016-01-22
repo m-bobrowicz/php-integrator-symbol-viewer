@@ -5,18 +5,41 @@
 @import "ui-variables";
 
 .php-integrator-symbol-viewer {
-    padding: 8px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    padding: 10px;
+    overflow: scroll;
+    word-wrap: break-word;
+    order: 0;
+    flex: 0 0 25%;
+}
+
+.php-header-name {
+  font-weight: bold;
+  margin: 10px 0.3em;
 }
 
 .php-integrator-sub-list {
     list-style: none;
-    padding-left: 0;
+    margin: 10px 0;
+    padding-left: 5px;
 }
 
 .php-integrator-sub-list li {
     cursor: pointer;
+}
+.php-integrator-sub-list li,
+.php-integrator-class-header {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.php-integrator-sub-list li {
+    transition: 0.7s;
+}
+
+.php-integrator-sub-list li:hover {
+    color: @text-color-highlight;
 }
 
 .php-integrator-sub-list li .bullet-container {
@@ -27,16 +50,15 @@
     background: #fff;
 }
 
-@bullet-size: 1.2em;
-@bullet-font-size: 1em;
+@bullet-size: 1.1em;
 
 .bullet-container {
   margin-right: 0.3em;
   font-family: monospace;
   border-radius: 50%;
-  width: @bullet-size;
-  height: @bullet-size;
-  font-size: @bullet-font-size;
+  width: 1.1em;
+  height: 1.1em;
+  font-size: 1.1em;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.4);
   display: inline-flex;
@@ -45,41 +67,29 @@
 }
 
 .bullet-content {
-    margin-left: 1px;
-    margin-top: 2px;
-}
-
-.php-integrator-properties-sub-list .bullet-container {
-  background: @ui-site-color-1;
-}
-
-.php-integrator-methods-sub-list .bullet-container {
-  background: @ui-site-color-2;
-}
-
-.php-integrator-static-methods-sub-list .bullet-container {
-  background: @ui-site-color-3;
+    margin-top: 0.25em;
 }
 
 .php-integrator-constants-sub-list .bullet-container {
+  background: @ui-site-color-5;
+}
+
+.php-integrator-static-properties-sub-list .bullet-container {
+  background: @ui-site-color-3;
+}
+
+.php-integrator-static-methods-sub-list .bullet-container {
   background: @ui-site-color-4;
+}
+
+.php-integrator-properties-sub-list .bullet-container {
+  background: @ui-site-color-2;
+}
+
+.php-integrator-methods-sub-list .bullet-container {
+  background: @ui-site-color-1;
 }
 
 .php-public {
   font-weight: bold;
-}
-
-.php-magic:before {
-  content: "*";
-  margin-right: 0.3em;
-}
-
-.php-getter:before {
-  content: "<";
-  margin-right: 0.3em;
-}
-
-.php-setter:before {
-  content: ">";
-  margin-right: 0.3em;
 }
