@@ -5,7 +5,7 @@ Atom package providing side panel with class information: constants, properties 
 
 ### WARNING
 Package requires [php-integrator-base package](https://github.com/Gert-dev/php-integrator-base).
-Package is under development and is by no means stable.
+Package is under development and I cannot guarantee stability and performance.
 
 #### Features
 
