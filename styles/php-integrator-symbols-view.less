@@ -4,12 +4,18 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.php-integrator-symbol-viewer {
+.php-integrator-symbol-viewer-container {
+    margin-top: @tab-height;
     padding: 10px;
-    overflow: scroll;
+    max-height: 100%;
     word-wrap: break-word;
-    order: 0;
-    flex: 0 0 25%;
+}
+.php-integrator-symbol-viewer {
+    overflow: scroll;
+}
+
+.php-integrator-symbol-viewer-input-container {
+    padding: 3px;
 }
 
 .php-header-name {
