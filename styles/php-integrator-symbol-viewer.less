@@ -6,20 +6,33 @@
 
 @bullet-size: 1.1em;
 
-.php-integrator-symbol-viewer {
+atom-php-integrator-symbol-viewer {
+    display: block;
     margin-top: @tab-height;
     height: 100%;
     width: 20vw;
-    padding: 10px;
+    padding: 0 6px 6px 6px;
     word-wrap: break-word;
+    overflow-y: scroll;
+    font-size: 1.1em;
+
+    .header {
+        width: 19vw;
+        position: fixed;
+        background: @app-background-color;
+    }
+
+    .title {
+        margin: 7px;
+    }
 
     .public {
       font-weight: bold;
     }
 
     .list-container {
-        height: 70%;
-        overflow-y: scroll;
+        margin-top: 80px;
+        margin-bottom: 53px;
     }
 
     // START bullet style
@@ -66,11 +79,10 @@
 
 
     .input-container {
-        padding: 3px;
-        margin-bottom: 10px;
+        margin: 10px;
     }
 
-    .list-header-name {
+    .title-name {
         font-weight: bold;
         font-size: 1.3em;
         margin: 10px 0.3em;
@@ -78,8 +90,9 @@
 
     .list {
         list-style: none;
-        margin: 10px 0;
-        padding-left: 5px;
+        padding: 6px 0 6px 5px;
+        margin: 0;
+        border-bottom: solid 1px @background-color-highlight;
     }
 
     .list li {
@@ -87,7 +100,7 @@
     }
 
     .list li,
-    .list-header {
+    .title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
