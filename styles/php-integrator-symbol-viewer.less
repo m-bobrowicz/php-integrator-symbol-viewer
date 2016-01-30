@@ -14,6 +14,7 @@ atom-php-integrator-symbol-viewer {
     overflow-y: scroll;
     font-size: 1.1em;
     .header {
+        z-index: 1;
         width: 19vw;
         position: fixed;
         background: @app-background-color;
@@ -23,10 +24,6 @@ atom-php-integrator-symbol-viewer {
     }
     .public {
         font-weight: bold;
-    }
-    .list-container {
-        margin-top: 80px;
-        margin-bottom: 53px;
     }
     // START bullet style
     @bullet-size: 15px;
@@ -77,14 +74,22 @@ atom-php-integrator-symbol-viewer {
         font-size: 1.3em;
         margin: 10px 0.3em;
     }
+    .list-container {
+        z-index: 2;
+        padding: 6px 0px 6px 5px;
+        margin-top: 80px;
+        margin-bottom: 53px;
+    }
     .list {
         list-style: none;
-        padding: 6px 0 6px 5px;
+        padding: 0;
         margin: 0;
-        border-bottom: solid 1px @background-color-highlight;
     }
     .list li {
         cursor: pointer;
+    }
+    .list li:last-child {
+        margin-bottom: 5px;
     }
     .list li,
     .title {
