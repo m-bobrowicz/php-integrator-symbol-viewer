@@ -7,19 +7,17 @@ atom-php-integrator-symbol-viewer {
     display: block;
     margin-top: @tab-height;
     height: 100%;
+    max-width: 275px;
     width: 20vw;
-    padding: 0 6px 6px;
     word-wrap: break-word;
     overflow-y: scroll;
     font-size: 1.1em;
     .header {
         z-index: 1;
-        width: 19vw;
+        max-width: 275px;
+        width: 20vw;
         position: fixed;
         background: @app-background-color;
-    }
-    .title {
-        margin: 7px;
     }
     .public {
         font-weight: bold;
@@ -63,18 +61,23 @@ atom-php-integrator-symbol-viewer {
     .list li:hover {
         color: @text-color-highlight;
     }
+    .title,
     .input-container {
-        margin: 10px;
+        display: block;
+        margin: 7px 15px;
+    }
+    .input-container atom-text-editor {
+        width: 100%;
     }
     .title-name {
         font-weight: bold;
-        font-size: 1.3em;
+        font-size: 1.4em;
         margin: 10px 0.3em;
     }
     .list-container {
         z-index: 2;
-        padding: 6px 0px 6px 5px;
-        margin-top: 80px;
+        padding: 6px 0px 6px 10px;
+        margin-top: 60px;
         margin-bottom: 53px;
     }
     .list {
