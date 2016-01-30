@@ -3,123 +3,94 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
-
 @bullet-size: 1.1em;
-
 atom-php-integrator-symbol-viewer {
     display: block;
     margin-top: @tab-height;
     height: 100%;
     width: 20vw;
-    padding: 0 6px 6px 6px;
+    padding: 0 6px 6px;
     word-wrap: break-word;
     overflow-y: scroll;
     font-size: 1.1em;
-
     .header {
         width: 19vw;
         position: fixed;
         background: @app-background-color;
     }
-
     .title {
         margin: 7px;
     }
-
     .public {
-      font-weight: bold;
+        font-weight: bold;
     }
-
     .list-container {
         margin-top: 80px;
         margin-bottom: 53px;
     }
-
     // START bullet style
+    @bullet-size: 15px;
     .bullet-container {
-      margin-right: 0.3em;
-      font-family: monospace;
-      border-radius: 50%;
-      width: 1.1em;
-      height: 1.1em;
-      font-size: 1.1em;
-      font-weight: 900;
-      color: rgba(0, 0, 0, 0.4);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: @bullet-size;
+        height: @bullet-size;
+        margin-right: 5px;
     }
-
     .bullet-content {
-        margin-top: 0.25em;
-        margin-left: 0.03em;
+        position: absolute;
+        top: -1px;
+        left: 3px;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 20px;
+        font-weight: 900;
     }
-
-    .constants-list .bullet-container {
-      background: @ui-site-color-5;
+    .constants-list .bullet-content {
+        color: @ui-site-color-5;
     }
-
-    .static-properties-list .bullet-container {
-      background: @ui-site-color-3;
+    .static-properties-list .bullet-content {
+        color: @ui-site-color-3;
     }
-
-    .static-methods-list .bullet-container {
-      background: @ui-site-color-4;
+    .static-methods-list .bullet-content {
+        color: @ui-site-color-4;
     }
-
-    .properties-list .bullet-container {
-      background: @ui-site-color-2;
+    .properties-list .bullet-content {
+        color: @ui-site-color-2;
     }
-
-    .methods-list .bullet-container {
-      background: @ui-site-color-1;
-
+    .methods-list .bullet-content {
+        color: @ui-site-color-1;
     }
     // END bullet style
-
-
+    .list li {
+        transition: 0.3s;
+    }
+    .list li:hover {
+        color: @text-color-highlight;
+    }
     .input-container {
         margin: 10px;
     }
-
     .title-name {
         font-weight: bold;
         font-size: 1.3em;
         margin: 10px 0.3em;
     }
-
     .list {
         list-style: none;
         padding: 6px 0 6px 5px;
         margin: 0;
         border-bottom: solid 1px @background-color-highlight;
     }
-
     .list li {
         cursor: pointer;
     }
-
     .list li,
     .title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
-    }
-
-    .list li {
-        transition: 0.35s;
-    }
-
-    .list li:hover {
-        color: @text-color-highlight;
-    }
-
-    .list li .bullet-container {
-        transition: 0.7s;
-    }
-
-    .list li:hover .bullet-container {
-        background: #fff;
     }
 }
