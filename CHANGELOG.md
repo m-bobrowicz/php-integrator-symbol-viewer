@@ -1,3 +1,13 @@
+# 0.3.3
+* fixed passing null className to service
+* added panel side configuration
+* added collapsable symbol info (property types, parameters, return types, descriptions)
+
+# 0.3.1
+* added command for toggling panel's visibility
+* fixed consumed service version (thanks to @Gert-dev)
+* changed event subscription to custom service event
+
 # 0.3.0
 * changed bullets to bold letters without radial background
 * removed divider lines
