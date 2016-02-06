@@ -73,10 +73,10 @@ atom-php-integrator-symbol-viewer {
     .dependencies-filter .bullet-content {
         color: @text-color-highlight;
     }
-    .list li {
+    .list li span{
         transition: 0.3s;
     }
-    .list li:hover {
+    .list li span:hover {
         color: @text-color-highlight;
     }
     .title,
@@ -92,6 +92,49 @@ atom-php-integrator-symbol-viewer {
         font-weight: 900;
         color: @text-color-highlight;
     }
+    .list li .show-item-details {
+      position: relative;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px;
+      float: right;
+    }
+    .list li .show-item-details::before {
+      font-size: 20px;
+      transition: transform 0.3s ease-in-out;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      content: "\00ab";
+      transform:  translateX(-50%) translateY(-50%);
+    }
+    .list li .show-item-details.active::before{
+      transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+    }
+
+    .description-container {
+      margin: 0;
+      max-height: 0;
+      width: 80%;
+      white-space: normal;
+      word-break: keep-all;
+      transition: 0.45s ease-in-out;
+    }
+
+    .description-container.active{
+      margin: 10px 0 0 10px;
+      max-height: 600px;
+    }
+
+    .list li {
+      max-height: 21px;
+      transition: max-height 0.45s ease-in-out;
+    }
+
+    .list li.active{
+      max-height: 600px;
+    }
+
     .list-container {
         z-index: 2;
         margin-left: 24px;
@@ -115,5 +158,16 @@ atom-php-integrator-symbol-viewer {
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
+    }
+
+    .parameters-list {
+        margin-left: 5px;
+        strong {
+          margin-right: 3px;
+        }
+    }
+
+    .detail-part-container{
+      margin: 5px 0;
     }
 }
