@@ -3,171 +3,152 @@
 // See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
 // for a full listing of what's available.
 @import "ui-variables";
+@import "octicon-utf-codes";
+
+@width: 300px;
+@max-width: 20vw;
+
 atom-php-integrator-symbol-viewer {
-    display: block;
-    margin-top: @tab-height;
-    height: 100%;
-    max-width: 275px;
-    width: 20vw;
-    word-wrap: break-word;
-    overflow-y: scroll;
-    font-size: 1.1em;
-    .header {
-        z-index: 1;
-        max-width: 275px;
-        width: 20vw;
-        position: fixed;
-        background: @app-background-color;
+    opacity: 0.999;
+    height: 100vh !important;
+    background: @app-background-color;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    overflow: visible;
+    max-width: @max-width;
+    width: @width;
+
+    .highlighted-letter {
+        color: @text-color-highlight !important;
     }
-    .public {
-        font-weight: bold;
-    }
-    @bullet-size: 15px;
-    .bullet-container {
-        position: relative;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: @bullet-size;
-        height: @bullet-size;
-        margin-right: 5px;
-    }
-    .bullet-content {
-        position: absolute;
-        top: -2px;
-        left: 3px;
-        font-family: "Lucida Console", Monaco, monospace;
-        font-size: 20px;
-        font-weight: 900;
-    }
-    .constants-list .bullet-content {
-        color: @ui-site-color-5;
-    }
-    .static-properties-list .bullet-content {
-        color: @ui-site-color-3;
-    }
-    .static-methods-list .bullet-content {
-        color: @ui-site-color-4;
-    }
-    .properties-list .bullet-content {
-        color: @ui-site-color-2;
-    }
-    .methods-list .bullet-content {
-        color: @ui-site-color-1;
-    }
-    .title .bullet-content {
-        color: @text-color-error;
-    }
-    .dependencies-filter.active {
-        font-weight: 700;
-        color: @text-color-highlight;
-    }
-    .dependencies-filter {
-        transition: 0.3s;
-        cursor: pointer;
-        margin: 10px;
-    }
-    .dependencies-filter:hover {
-        color: @text-color-highlight;
-    }
-    .dependencies-filter .bullet-content {
-        color: @text-color-highlight;
-    }
-    .list li span{
-        transition: 0.3s;
-    }
-    .list li span:hover {
-        color: @text-color-highlight;
-    }
-    .title,
-    .input-container {
-        display: block;
-        margin: 7px;
-    }
-    .input-container atom-text-editor {
+
+    .figure-container  {
         width: 100%;
-    }
-    .title-name {
-        font-size: 16px;
-        font-weight: 900;
-        color: @text-color-highlight;
-    }
-    .list li .show-item-details {
-      position: relative;
-      margin-right: 10px;
-      width: 15px;
-      height: 15px;
-      float: right;
-    }
-    .list li .show-item-details::before {
-      font-size: 20px;
-      transition: transform 0.3s ease-in-out;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      content: "\00ab";
-      transform:  translateX(-50%) translateY(-50%);
-    }
-    .list li .show-item-details.active::before{
-      transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
-    }
+        padding: @component-padding * 1.5;
+        position: relative;
+        z-index: 10;
+        background-color: @app-background-color !important;
 
-    .description-container {
-      margin: 0;
-      max-height: 0;
-      width: 80%;
-      white-space: normal;
-      word-break: keep-all;
-      transition: 0.45s ease-in-out;
-    }
-
-    .description-container.active{
-      margin: 10px 0 0 10px;
-      max-height: 600px;
-    }
-
-    .list li {
-      max-height: 21px;
-      transition: max-height 0.45s ease-in-out;
-    }
-
-    .list li.active{
-      max-height: 600px;
-    }
-
-    .list-container {
-        z-index: 2;
-        margin-left: 24px;
-        margin-top: 68px;
-        margin-bottom: 53px;
-    }
-    .list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    .list li {
-        cursor: pointer;
-    }
-    .list li:last-child {
-        margin-bottom: 5px;
-    }
-    .list li,
-    .title {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
-    .parameters-list {
-        margin-left: 5px;
-        strong {
-          margin-right: 3px;
+        .figure-choice {
+            color: @text-color !important;
+            background-color: @app-background-color !important;
         }
     }
 
-    .detail-part-container{
-      margin: 5px 0;
+    .lists-container.active {
+        display: flex;
+    }
+    .lists-container {
+        position: relative;
+        z-index: 2;
+        display: none;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-x: visible;
+        overflow-y: auto;
+
+        .list {
+            margin-left: @component-padding * 1.5;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            box-sizing: border-box;
+
+            .list-element:hover {
+                color: @text-color-highlight;
+            }
+            .list-element {
+                margin: 3px 0;
+                width: 100%;
+                position: relative;
+                overflow: visible;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                .title {
+                    display: flex;
+
+                    .inherited {
+                        display: inline;
+                        width: 1.5em;
+                        margin-right: 0.5em;
+                    }
+
+                    .inherited.active:before {
+                        font-family: "Octicons Regular";
+                        content: @link;
+                    }
+
+                    .bullet {
+                        flex-grow: 0;
+                        font-size: 1.2em;
+                        width: 1.5em;
+                        font-weight: 900;
+                        text-align: right;
+                        margin-right: 0.5em;
+                    }
+
+                    .name {
+                        width: 100%;
+                        flex-grow: 1;
+                        align-content: space-between;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    .info {
+                        flex-grow: 0;
+                        font-size: 1.2em;
+                        display: inline-block;
+                        width: 1.5em;
+                        font-weight: 900;
+                        margin-left: 0.5em;
+                    }
+                }
+
+                .details {
+                    color: @app-background-color;
+                    background: @text-color;
+                    border-radius: @component-border-radius;
+                    width: 90%;
+                    white-space: normal;
+                    word-wrap: break-word;
+                    display: none;
+                    max-height: 0;
+                    transition: max-height 0.2s;
+                }
+                .details.active {
+                    margin: @component-padding;
+                    padding: @component-padding;
+                    display: block;
+                    max-height: 600px;
+                }
+            }
+        }
+        .constants-list .bullet {
+            color: @ui-site-color-3;
+        }
+        .static-properties-list .bullet {
+            color: @ui-site-color-5;
+        }
+        .static-methods-list .bullet {
+            color: @ui-site-color-4;
+        }
+        .properties-list .bullet {
+            color: @ui-site-color-1;
+        }
+        .methods-list .bullet {
+            color: @ui-site-color-2;
+        }
+    }
+
+    .filter-container {
+        padding: @component-padding @component-padding * 1.5;
+    }
+
+    .search-container {
+        padding: @component-padding @component-padding * 1.5;
+        margin-bottom: 20px;
     }
 }
