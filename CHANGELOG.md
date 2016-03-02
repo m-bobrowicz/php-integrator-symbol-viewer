@@ -1,3 +1,13 @@
+# 0.5.0
+* rewritten view from scratch to utilize ES6 templates
+* dropped parent filters in favour of toggling inherited properties
+* view layout written in flexbox
+* added centering scroll when navigating to a symbol
+* added setting whether inherited properties should be displayed by default
+* added distinction between own and inherited symbols
+* added highlighting in search
+* added support for mutliple classes in the same file
+
 # 0.3.3
 * fixed passing null className to service
 * added panel side configuration
