@@ -1,3 +1,7 @@
+# 0.5.2
+* added empty figures view
+* css fixes
+
 # 0.5.0
 * rewritten view from scratch to utilize ES6 templates
 * dropped parent filters in favour of toggling inherited properties
