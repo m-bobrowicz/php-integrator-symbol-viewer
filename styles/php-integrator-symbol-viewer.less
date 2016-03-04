@@ -25,7 +25,7 @@ atom-php-integrator-symbol-viewer {
 
     .figure-container  {
         width: 100%;
-        padding: @component-padding * 1.5;
+        padding: @component-padding @component-padding * 1.5;
         position: relative;
         z-index: 10;
         background-color: @app-background-color !important;
@@ -67,11 +67,13 @@ atom-php-integrator-symbol-viewer {
 
                 .title {
                     display: flex;
+                    align-items: center;
 
                     .inherited {
                         display: inline;
                         width: 1.5em;
                         margin-right: 0.5em;
+                        color: @text-color !important;
                     }
 
                     .inherited.active:before {
@@ -99,11 +101,11 @@ atom-php-integrator-symbol-viewer {
 
                     .info {
                         flex-grow: 0;
-                        font-size: 1.2em;
+                        font-size: 1.5em;
                         display: inline-block;
                         width: 1.5em;
-                        font-weight: 900;
                         margin-left: 0.5em;
+
                     }
                 }
 
@@ -125,6 +127,16 @@ atom-php-integrator-symbol-viewer {
                     max-height: 600px;
                 }
             }
+
+            .list-element .info::before {
+                font-family: "Octicons Regular";
+                content: @chevron-left;
+            }
+
+            .list-element.active .info::before {
+                font-family: "Octicons Regular";
+                content: @chevron-down;
+            }
         }
         .constants-list .bullet {
             color: @ui-site-color-3;
@@ -144,10 +156,14 @@ atom-php-integrator-symbol-viewer {
     }
 
     .filter-container {
+        flex-grow: 0;
+        flex-shrink: 0;
         padding: @component-padding @component-padding * 1.5;
     }
 
     .search-container {
+        flex-grow: 0;
+        flex-shrink: 0;
         padding: @component-padding @component-padding * 1.5;
         margin-bottom: 20px;
     }
