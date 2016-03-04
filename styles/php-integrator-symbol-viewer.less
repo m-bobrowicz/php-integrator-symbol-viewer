@@ -167,4 +167,21 @@ atom-php-integrator-symbol-viewer {
         padding: @component-padding @component-padding * 1.5;
         margin-bottom: 20px;
     }
+
+    .empty-view-container {
+        display: flex;
+        flex-direction: column;
+        .empty-view-title {
+            padding: @component-padding @component-padding * 1.5;
+
+            .warning::before {
+                margin-right: 1em;
+                font-family: "Octicons Regular";
+                content: @alert;
+            }
+        }
+        .empty-view-content {
+            padding: @component-padding @component-padding * 1.5;
+        }
+    }
 }
