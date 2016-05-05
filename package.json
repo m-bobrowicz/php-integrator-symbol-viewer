@@ -1,7 +1,7 @@
 {
   "name": "php-integrator-symbol-viewer",
   "main": "./lib/Main",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Atom package providing side panel with class information.",
   "repository": "https://github.com/tocjent/php-integrator-symbol-viewer.git",
   "license": "GPL-3.0",
