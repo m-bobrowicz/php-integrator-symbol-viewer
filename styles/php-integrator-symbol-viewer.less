@@ -22,7 +22,6 @@ atom-php-integrator-symbol-viewer {
     background: @app-background-color;
 
     .toggle-button-container {
-        flex: 0;
         display: flex;
         align-items: center;
         justify-content: flex-end;
@@ -54,7 +53,7 @@ atom-php-integrator-symbol-viewer atom-php-integrator-symbol-viewer-content {
     min-height: 150px;
     overflow-y: auto;
     flex-direction: column;
-    font-size: 1.2em;
+    font-size: 1.0em;
 
     .highlighted-letter {
         color: @text-color-highlight !important;
@@ -70,6 +69,7 @@ atom-php-integrator-symbol-viewer atom-php-integrator-symbol-viewer-content {
         .figure-choice {
             color: @text-color !important;
             background-color: @app-background-color !important;
+            font-size: 1.1em;
         }
     }
 
@@ -120,7 +120,7 @@ atom-php-integrator-symbol-viewer atom-php-integrator-symbol-viewer-content {
 
                     .bullet {
                         flex-grow: 0;
-                        font-size: 1.2em;
+                        font-size: 1.0em;
                         width: 1.5em;
                         font-weight: 900;
                         text-align: right;
@@ -138,7 +138,7 @@ atom-php-integrator-symbol-viewer atom-php-integrator-symbol-viewer-content {
 
                     .info {
                         flex-grow: 0;
-                        font-size: 1.5em;
+                        font-size: 1.0em;
                         display: inline-block;
                         width: 1.5em;
                         margin-left: 0.5em;
@@ -196,6 +196,10 @@ atom-php-integrator-symbol-viewer atom-php-integrator-symbol-viewer-content {
         flex-grow: 0;
         flex-shrink: 0;
         padding: @component-padding @component-padding * 1.5;
+        
+        .setting-title {
+            font-size: 1.0em;
+        }
     }
 
     .search-container {
