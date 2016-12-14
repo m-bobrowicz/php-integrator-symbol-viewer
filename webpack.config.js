@@ -1,11 +1,12 @@
-var path = require("path");
+var path = require('path');
 module.exports = {
-    entry: "./dev/app.dev.js",
+    entry: './lib/app.dev.js',
     output: {
-        path: path.resolve(__dirname, "build"),
-        publicPath: "/",
-        filename: "bundle.js"
+        path: path.resolve(__dirname, 'build'),
+        publicPath: '/',
+        filename: 'bundle.js'
     },
+    devtool: 'eval-source-map',
     module: {
         loaders: [
             {
