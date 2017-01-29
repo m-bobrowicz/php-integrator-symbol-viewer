@@ -1,0 +1,25 @@
+@import "octicon-utf-codes";
+
+atom-php-integrator-symbol-viewer {
+  .symbol-viewer__toggle-container {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .symbol-viewer__toggle {
+    display: flex;
+    width: 40px;
+    margin-left: auto;
+  }
+
+  .symbol-viewer__toggle::before {
+    font-size: 20px;
+    font-family: "Octicons Regular";
+    margin: 0 auto;
+    content: @chevron-right;
+  }
+
+  .symbol-viewer__toggle--collapsed::before {
+    content: @chevron-left;
+  }
+}

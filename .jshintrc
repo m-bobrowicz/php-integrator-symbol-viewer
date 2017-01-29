@@ -1,0 +1,27 @@
+{
+  "bitwise": true,
+  "browser": false,
+  "camelcase": false,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "expr": true,
+  "globals": {
+    "Promise": true
+  },
+  "immed": true,
+  "indent": 2,
+  "jasmine": true,
+  "latedef": "nofunc",
+  "newcap": true,
+  "noarg": true,
+  "node": true,
+  "quotmark": true,
+  "regexp": true,
+  "smarttabs": true,
+  "strict": false,
+  "trailing": true,
+  "undef": true,
+  "unused": true,
+  "validthis": true
+}

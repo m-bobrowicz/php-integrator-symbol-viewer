@@ -1,27 +1,14 @@
-// The ui-variables file is provided by base themes provided by Atom.
-//
-// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
-// for a full listing of what's available.
 @import "ui-variables";
 @import "octicon-utf-codes";
 
 atom-php-integrator-symbol-viewer {
-  .toggle-button-container {
-    text-align: right;
-  }
-
-  .toggle-button::before {
-    font-size: 20px;
-    font-family: "Octicons Regular";
-    content: @three-bars;
-    cursor: pointer;
-  }
-
   .symbol-viewer {
-    width: 200px;
+    max-width: 200px;
+    transition: 0.5s;
+    width: 20vw;
   }
 
   .symbol-viewer--collapsed {
-    width: 40px;
+    max-width: 40px;
   }
 }
