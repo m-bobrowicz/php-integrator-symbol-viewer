@@ -1,8 +1,6 @@
-# WARNING
-
-symbol-viewer was developed when php-integrator-base was around version 0.7 a few months ago.
-Due to personal reasons I'm temporarily not able to maintain it and it's not going to work with php-integrator-base >=1.0.
-If you would like to help with development and publishing of the package please let me know at bobrowicz.michal@gmail.com. Sorry for the inconvenience.
+# Notice
+This package is forked from [php-integrator-symbol-viewer]https://github.com/tocjent/php-integrator-symbol-viewer .
+This is a very helpful tool for PHP class. It is compatible with php-integrator ^3.0.0 now ^_^.
 
 # php-integrator-symbol-viewer
 Atom package providing side panel with class information: constants, properties and methods with go-to functionality provided by php-integrator-base package.
